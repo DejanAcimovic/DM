@@ -59,13 +59,7 @@ names(data)
 summary(data$ARRIVAL_DELAY) 
 hist(data$ARRIVAL_DELAY,breaks = 300, xlim = c(-80,100))
 hist(data$ARRIVAL_DELAY,breaks = 300, xlim = c(-10,100))
-plot(x = data$ARRIVAL_DELAY,y = data$DEPARTURE_DELAY,
-     xlab = "ARRIVAL_DELAY",
-     ylab = "DEPARTURE_DELAY",
-     xlim = c(-10,10),
-     ylim = c(-10,10),		 
-     main = "ARRIVAL_DELAY vs DEPARTURE_DELAY"
-)
+#plot(x = data$ARRIVAL_DELAY,y = data$DEPARTURE_DELAY, xlab = "ARRIVAL_DELAY",ylab = "DEPARTURE_DELAY",xlim = c(-10,10),ylim = c(-10,10),		 main = "ARRIVAL_DELAY vs DEPARTURE_DELAY")
 summary(data$DEPARTURE_DELAY)
 hist(data$DEPARTURE_DELAY,breaks = 300, xlim = c(-80,100))
 hist(data$DEPARTURE_DELAY,breaks = 300, xlim = c(-10,100))
