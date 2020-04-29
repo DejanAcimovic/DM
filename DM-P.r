@@ -9,7 +9,7 @@ library(data.table)
 library('dplyr')
 library('assertthat')
 #postavljanje na direktorij u kojem se nalaze dataset-ovi
-setwd('C:/Users/Armin/Desktop/DM')
+setwd('C:/Users/Armin/Desktop/DMgithub')
 
 #ucitavanje datasetova
 flights <- read.csv("flights.csv")
@@ -67,6 +67,15 @@ hist(data$DEPARTURE_DELAY,breaks = 300, xlim = c(-10,100))
 #deskriptivna statistika
 summary(data)
 glimpse(data) 
+
+data$DEPARTURE_DELAY[data$DEPARTURE_DELAY==""]<-NA
+
+#broj missing value-a unuatr dataseta
+print(sum(is.na(data$DEPARTURE_DELAY)))
+#brisanje svih missing value-a u datasetu
+data = data[complete.cases(data), ]
+#broj missing value-a nakon brisanja u datasetu radi provjere
+print(sum(is.na(data$DEPARTURE_DELAY)))
 
 #tehnike za èisæenje i transformaciju
 ##zbog velièine data dataseta ogranit æemo se samo na one letove koji imaju kašnjenje veæe od 60 minuta
