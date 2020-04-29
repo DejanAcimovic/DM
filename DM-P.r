@@ -72,11 +72,13 @@ data$DEPARTURE_DELAY[data$DEPARTURE_DELAY==""]<-NA
 
 #broj missing value-a unuatr dataseta
 print(sum(is.na(data$DEPARTURE_DELAY)))
+print(sum(is.na(data$ARRIVAL_DELAY)))
 #brisanje svih missing value-a u datasetu
-data = data[complete.cases(data), ]
+data = data[complete.cases(data$DEPARTURE_DELAY), ]
+data = data[complete.cases(data$ARRIVAL_DELAY), ]
 #broj missing value-a nakon brisanja u datasetu radi provjere
 print(sum(is.na(data$DEPARTURE_DELAY)))
-
+print(sum(is.na(data$ARRIVAL_DELAY)))
 #tehnike za èisæenje i transformaciju
 ##zbog velièine data dataseta ogranit æemo se samo na one letove koji imaju kašnjenje veæe od 60 minuta
 data <- data [which(data$ARRIVAL_DELAY > 60),]
